@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="global-messages" />
+	
+	<package name="default" namespace="/" extends="struts-default">
+	    <action name="home" class="com.expt.actions.Home">
+	        <result>/jsp/main/ehome.jsp</result>
+	    </action>
+	 </package>
+	 
+	<package name="expense" namespace="/" extends="struts-default">
+	    <action name="ehome">
+	        <result>/jsp/expenses/exptmain.jsp</result>
+	    </action>
+	    
+	    <action name="expt">
+	        <result>/jsp/expenses/exptce.jsp</result>
+	    </action>
+	    
+	    <action name="ExpenseAct" class="com.expt.actions.ExpenseAct">
+	        <result>/jsp/main/ehome.jsp</result>
+	    </action>
+	    
+	     <action name="saveExpense" class="com.expt.actions.ExpenseAct">
+	        <result>/jsp/main/ehome.jsp</result>
+	    </action>
+	 </package>
+	 
+	<package name="admin" namespace="/" extends="struts-default">
+	    <action name="aHome" class="com.expt.db.DBAction">
+	        <result>/jsp/db.jsp</result>
+	    </action>
+    
+	 </package>
+	 
+	<package name="users" namespace="/" extends="struts-default">
+	    <action name="users">
+	        <result>/jsp/users/users.jsp</result>
+	    </action>
+    
+	    <action name="adduser">
+	        <result>/jsp/users/adduser.jsp</result>
+	    </action>
+	    
+	    <action name="user" class="com.expt.users.User">
+	        <result>/jsp/main/home.jsp</result>
+	    </action>
+	    
+	 </package>
+	 
+	
+	<package name="reports" namespace="/" extends="struts-default">
+	    <action name="creatreport" class="com.expt.reports.CreatReport">
+	        <result>/jsp/main/ehome.jsp</result>
+	    </action>
+	 </package>
+</struts>
